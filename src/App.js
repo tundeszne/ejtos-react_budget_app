@@ -2,12 +2,12 @@ import React from 'react';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-import { AppProvider } from './context/AppContext';
-
 import Budget from './components/Budget';
 import Remaining from './components/Remaining';
 import ExpenseTotal from './components/ExpenseTotal';
-import ExpenseItem from './components/ExpenseItem';
+import ExpenseList from './components/ExpenseList';
+
+import { AppProvider } from './context/AppContext';
 
 const App = () => {
     return (
@@ -24,7 +24,7 @@ const App = () => {
                     <ExpenseTotal />
                 </div>       
                 <div className='col-sm'>
-                    <ExpenseItem />
+                    <ExpenseList />
                 </div>      
 
                         {/* Add ExpenseItem component here under */}        
