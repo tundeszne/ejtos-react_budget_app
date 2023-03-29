@@ -8,5 +8,5 @@ A simple company budget allocation app excercise.
 
 # Author 
 
-@IBM Developer Skills Network
+@IBM Developer Skills Network - 
 https://skills.network/
