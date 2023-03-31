@@ -2,7 +2,7 @@ import React, { createContext, useReducer } from 'react';
 
 // 5. The reducer - this is used to update the state, based on the action
 export const AppReducer = (state, action) => {
-    let budget = 0;
+    let budget;
     switch (action.type) {
         case 'ADD_EXPENSE':
             let total_budget = 0;
@@ -12,7 +12,7 @@ export const AppReducer = (state, action) => {
                 },0
             );
             total_budget = total_budget + action.payload.cost;
-            action.type = "DONE";
+
             if(total_budget <= state.budget) {
                 total_budget = 0;
                 state.expenses.map((currentExp)=> {
@@ -30,7 +30,7 @@ export const AppReducer = (state, action) => {
                     ...state
                 }
             }
-            case 'RED_EXPENSE':
+        case 'RED_EXPENSE':
                 const red_expenses = state.expenses.map((currentExp)=> {
                     if (currentExp.name === action.payload.name && currentExp.cost - action.payload.cost >= 0) {
                         currentExp.cost =  currentExp.cost - action.payload.cost;
@@ -38,13 +38,13 @@ export const AppReducer = (state, action) => {
                     }
                     return currentExp
                 })
-                action.type = "DONE";
+
                 return {
                     ...state,
                     expenses: [...red_expenses],
                 };
-            case 'DELETE_EXPENSE':
-            action.type = "DONE";
+        case 'DELETE_EXPENSE':
+
             state.expenses.map((currentExp)=> {
                 if (currentExp.name === action.payload) {
                     budget = state.budget + currentExp.cost
@@ -52,20 +52,20 @@ export const AppReducer = (state, action) => {
                 }
                 return currentExp
             })
-            action.type = "DONE";
+
             return {
                 ...state,
                 budget
             };
         case 'SET_BUDGET':
-            action.type = "DONE";
+
             state.budget = action.payload;
 
             return {
                 ...state,
             };
         case 'CHG_CURRENCY':
-            action.type = "DONE";
+
             state.currency = action.payload;
             return {
                 ...state
@@ -93,7 +93,7 @@ const initialState = {
 export const AppContext = createContext();
 
 // 3. Provider component - wraps the components we want to give access to the state
-// Accepts the children, which are the nested(wrapped) components
+// Accepts the children, which are the nested (wrapped) components
 export const AppProvider = (props) => {
     // 4. Sets up the app state. takes a reducer, and an initial state
     const [state, dispatch] = useReducer(AppReducer, initialState);

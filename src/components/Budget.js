@@ -7,7 +7,8 @@ const Budget = () => {
     const initialBudget = budget;
     const [newBudget, setNewBudget] = useState(initialBudget);
 
-    const submitNewBudget = () => {
+    const submitNewBudget = (e) => {
+        e.preventDefault();
         dispatch({
             type: 'SET_BUDGET',
             payload: newBudget,
@@ -17,7 +18,7 @@ const Budget = () => {
     return (
         <div className='alert alert-secondary'>
             <form onSubmit={submitNewBudget}>
-                Budget: {currency}{budget}
+                Budget: {currency}{newBudget}
                 <input
                     type='number'
                     id='newBudget'
