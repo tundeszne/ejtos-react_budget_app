@@ -25,7 +25,7 @@ const Budget = () => {
     }
     
     return (
-        <div className='alert alert-secondary'>
+        <div className='alert alert-secondary' style={{padding: '0.5rem .7rem'}}>
             <form onSubmit={submitNewBudget}>
                 <label htmlFor='newBudget'>Budget: {currency}</label>
                 <input
@@ -33,7 +33,7 @@ const Budget = () => {
                     id='newBudget'
                     name='newBudget'
                     value={newBudget}
-                    // style={{ marginLeft: '0rem' , size: 10}}
+                    style={{ display: 'inline-block', maxWidth: '60%'}}
                     onChange={(event) => setNewBudget(event.target.value)}
                     >
                 </input>
