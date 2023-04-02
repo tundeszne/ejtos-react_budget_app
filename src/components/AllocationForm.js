@@ -9,7 +9,7 @@ const AllocationForm = (props) => {
     const [action, setAction] = useState('');
 
     const submitEvent = () => {
-        if (action === "Add" && cost > remaining) {
+        if (cost > remaining) {
             alert("The value cannot exceed remaining funds: " + currency + remaining);
             setCost("");
             return;
