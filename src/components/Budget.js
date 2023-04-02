@@ -14,7 +14,7 @@ const Budget = () => {
         
         if (newBudget < totalExpenses) {
             alert("You cannot reduce the budget lower than the spending: " + currency + totalExpenses);
-            newBudget=budget;
+            setNewBudget(budget);
             return;
         }
 
