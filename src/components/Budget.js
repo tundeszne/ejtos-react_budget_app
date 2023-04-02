@@ -32,6 +32,9 @@ const Budget = () => {
                     type='number'
                     id='newBudget'
                     name='newBudget'
+                    min={0}
+                    max={20000}
+                    step={10}
                     value={newBudget}
                     style={{ display: 'inline-block', maxWidth: '60%'}}
                     onChange={(event) => setNewBudget(event.target.value)}
