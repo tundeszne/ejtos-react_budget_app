@@ -1,0 +1,16 @@
+.btn.dropdown-toggle {
+    background-color: lightgreen;
+    color: white;
+}
+.btn.dropdown-toggle:focus {
+    box-shadow: 0 0 0 0.1rem rgb(210, 215, 219);
+}
+
+.dropdown-menu {
+    background-color: lightgreen;
+    border: 1px solid rgb(69, 69, 69);
+}
+
+.dropdown-menu .dropdown-item:hover {
+    background-color: white;
+}

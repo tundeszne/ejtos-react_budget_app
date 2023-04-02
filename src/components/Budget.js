@@ -27,7 +27,7 @@ const Budget = () => {
     return (
         <div className='alert alert-secondary'>
             <form onSubmit={submitNewBudget}>
-                <label for='newBudget'>Budget: {currency}</label>
+                <label htmlFor='newBudget'>Budget: {currency}</label>
                 <input
                     type='number'
                     id='newBudget'
