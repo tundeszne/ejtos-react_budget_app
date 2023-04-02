@@ -18,10 +18,10 @@ const Currency = () => {
             <button className="btn dropdown-toggle" type="button" data-toggle="dropdown" id='dropDownCurrency' aria-haspopup="true" aria-expanded="false">Currency&nbsp;({currency === "$" ? "$ Dollar" : currency === "£" ? "£ Pound" : currency === "€" ? "€ Euro" : "₹ Ruppee"})
             </button>
             <div className='dropdown-menu' aria-labelledby="dropDownCurrency">
-                <a className='dropdown-item' href='#' onClick={event => changeCurrency('$')}>$ Dollar</a>
-                <a className='dropdown-item' href='#' onClick={event => changeCurrency('£')}>£ Pound</a>
-                <a className='dropdown-item' href='#' onClick={event => changeCurrency('€')}>€ Euro</a>
-                <a className='dropdown-item' href='#' onClick={event => changeCurrency('₹')}>₹ Ruppee</a>
+                <button className='dropdown-item' onClick={event => changeCurrency('$')}>$ Dollar</button>
+                <button className='dropdown-item' onClick={event => changeCurrency('£')}>£ Pound</button>
+                <button className='dropdown-item' onClick={event => changeCurrency('€')}>€ Euro</button>
+                <button className='dropdown-item' onClick={event => changeCurrency('₹')}>₹ Ruppee</button>
             </div>
         </div>
     );
